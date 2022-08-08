@@ -29,8 +29,8 @@ export default function URLWarning() {
   return isMobile ? (
     <PhishAlert isActive={showURLWarning}>
       <div style={{ display: 'flex' }}>
-        <AlertTriangle style={{ marginRight: 6 }} size={12} /> Make sure you are on the
-        <code style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }}>right URL!</code>
+        <AlertTriangle style={{ marginRight: 6 }} size={12} /> Make sure you trading are on
+        <code style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }}>open-dex.com</code> before proceeding.
       </div>
       <StyledClose size={12} onClick={toggleURLWarning} />
     </PhishAlert>

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { BookOpen, Code, Info, MessageCircle, PieChart } from 'react-feather'
+import { BookOpen, Code, Info, PieChart } from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 
@@ -85,7 +85,7 @@ const MenuItem = styled(ExternalLink)`
   }
 `
 
-const CODE_LINK = 'https://github.com/nova-network-inc/fusion-boilerplate'
+const CODE_LINK = 'https://github.com/opendex-labs/opendex-interface'
 
 export default function Menu() {
 
@@ -105,21 +105,17 @@ export default function Menu() {
 
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://novanetwork.io/">
-            <Info size={14} />
-            About
-          </MenuItem>
-          <MenuItem id="link" href="https://docs.novanetwork.io/">
+          <MenuItem id="link" href="https://novascan.io/address/0xAA98e14A634D4A1F6F7D0cA3d30f655795831F78">
             <BookOpen size={14} />
-            Docs
+            Donate
+          </MenuItem>
+          <MenuItem id="link" href="https://docs.google.com/document/d/1hPeVOdAFWbI5_E6qo3jIdXZWm5Dbaln5sdF_9bUsVKw/edit?usp=sharing">
+            <Info size={14} />
+            Paper
           </MenuItem>
           <MenuItem id="link" href={CODE_LINK}>
             <Code size={14} />
             Github
-          </MenuItem>
-          <MenuItem id="link" href="https://discord.gg/novanetwork">
-            <MessageCircle size={14} />
-            Discord
           </MenuItem>
           <MenuItem id="link" href="https://novascan.io/">
             <PieChart size={14} />

@@ -159,7 +159,7 @@ const Title = styled.a`
 const ODIcon = styled.div`
   transition: transform 0.3s ease;
   :hover {
-    transform: rotate(-5deg);
+    transform: translateY(-5px);
   }
 `
 
@@ -249,6 +249,10 @@ const Button = styled.button`
     outline: none;
     background-color: ${({ theme }) => theme.bg4};
   }
+
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+      display: none;
+`}
 `
 
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
@@ -293,10 +297,14 @@ export default function Header() {
           </StyledNavLink>
 
           <Button>
-          <StyledExternalLink id={`add-token-nav-link`} href={'https://github.com/nova-network-inc/common-assets/tree/main/token-lists'}>
+          <StyledExternalLink id={`add-token-nav-link`} href={'https://github.com/nova-network-inc/common-assets/blob/main/token-lists/public/open-dex.json'}>
           {t('Add Your Token +')}
           </StyledExternalLink>
           </Button>
+
+          <StyledExternalLink id={`whitepaper-nav-link`} href={'https://docs.google.com/document/d/1hPeVOdAFWbI5_E6qo3jIdXZWm5Dbaln5sdF_9bUsVKw/edit?usp=sharing'}>
+          {t('Whitepaper')}
+          </StyledExternalLink>
 
         </HeaderLinks>
       </HeaderRow>

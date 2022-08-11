@@ -7,7 +7,7 @@ const PageWrapper = {
   fontSize: '11pt',
   width: '720px',
   maxWidth: '80vw',
-  lineHeight: '1.3',
+  lineHeight: '1.5',
 }
 
 const Title = {
@@ -33,7 +33,7 @@ const Button = {
 
   return (
     <div id='page-wrapper' style={PageWrapper}>
-      <div id='main-title' style={Title}>ODX Token</div>
+      <b><div id='main-title' style={Title}>ODX Token</div></b>
         <div id='body'>
           ODX Token is OpenDEX decentralized ERC20 token, deployed on Nova Network.
           It has a max. supply of <b>9,100</b>, and has been pooled with SNT received
@@ -52,26 +52,28 @@ const Button = {
         <b>Token Address:</b> <a
           href='https://novascan.io/address/0xe36118ccfa51e4caf750dfaeaf5c6cf250759acb'
           target='_blank'
+          rel="noopener noreferrer"
           >0xe36118ccfa51e4caf750dfaeaf5c6cf250759acb</a> <br />
         </div>
         <div id='txns' style={Spacer}>
-          <div style={Header}>Proof of Liquidity:</div>
-          <b>Liquidity Pooling:</b> <br />
+          <b><div style={Header}>Proof of Liquidity: </div></b><br />
+          <b>Liquidity Pooling:</b>
           <a
             href='https://novascan.io/transaction/0x4f7a2aa5202014abb2b700105c12188d0f155fb1438be8814253a218fbc8fb72'
             target='_blank'
+            rel="noopener noreferrer"
             >0x4f7a2aa5202014abb2b700105c12188d0f155fb1438be8814253a218fbc8fb72</a> <br />
-          <br /><br />
-          <b>Liquidity Locking:</b> <br />
+          <b>Liquidity Locking: </b>
           <a
             href='https://novascan.io/transaction/0x61cc0aeef191066c4d3705090d9d77bd5a4a591ed03fe9bcb578415f959a5b46'
             target='_blank'
+            rel="noopener noreferrer"
             >0x61cc0aeef191066c4d3705090d9d77bd5a4a591ed03fe9bcb578415f959a5b46</a> <br />
         </div>
         <div id='button-wrapper' style={Spacer}>
           <br />
           <span id='trade-button' style={Button}>
-          <a href='/swap' style={{ textDecoration: 'none' }}><b>BUY ODX</b></a>
+          <a href='/#/swap' style={{ textDecoration: 'none' }}><b>BUY ODX</b></a>
           </span>
         </div>
     </div>

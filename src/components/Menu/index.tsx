@@ -105,7 +105,7 @@ export default function Menu() {
 
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://novascan.io/address/0xAA98e14A634D4A1F6F7D0cA3d30f655795831F78">
+          <MenuItem id="link" href="https://novascan.io/address/0xAA98E14A634D4A1F6F7D0CA3D30F655795831F78">
             <BookOpen size={14} />
             Donate
           </MenuItem>

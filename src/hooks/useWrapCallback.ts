@@ -1,10 +1,11 @@
-import { Currency, currencyEquals, ETHER, WETH } from '@uniswap/sdk'
+import { Currency, currencyEquals, WETH } from '@uniswap/sdk'
 import { useMemo } from 'react'
 import { tryParseAmount } from '../state/swap/hooks'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { useCurrencyBalance } from '../state/wallet/hooks'
 import { useActiveWeb3React } from './index'
 import { useWETHContract } from './useContract'
+import useETHER from './useETHER'
 
 export enum WrapType {
   NOT_APPLICABLE,
@@ -25,6 +26,7 @@ export default function useWrapCallback(
   typedValue: string | undefined
 ): { wrapType: WrapType; execute?: undefined | (() => Promise<void>); inputError?: string } {
   const { chainId, account } = useActiveWeb3React()
+  const { ETHER } = useETHER()
   const wethContract = useWETHContract()
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency)
   // we can always parse the amount typed as the input currency, since wrapping is 1:1
@@ -44,13 +46,13 @@ export default function useWrapCallback(
             ? async () => {
                 try {
                   const txReceipt = await wethContract.deposit({ value: `0x${inputAmount.raw.toString(16)}` })
-                  addTransaction(txReceipt, { summary: `Wrap ${inputAmount.toSignificant(6)} ETH to WETH` })
+                  addTransaction(txReceipt, { summary: `Wrap ${inputAmount.toSignificant(6)} SNT to WSNT` })
                 } catch (error) {
                   console.error('Could not deposit', error)
                 }
               }
             : undefined,
-        inputError: sufficientBalance ? undefined : 'Insufficient ETH balance'
+        inputError: sufficientBalance ? undefined : 'Insufficient Balance'
       }
     } else if (currencyEquals(WETH[chainId], inputCurrency) && outputCurrency === ETHER) {
       return {
@@ -71,5 +73,5 @@ export default function useWrapCallback(
     } else {
       return NOT_APPLICABLE
     }
-  }, [wethContract, chainId, inputCurrency, outputCurrency, inputAmount, balance, addTransaction])
+  }, [wethContract, chainId, inputCurrency, outputCurrency, inputAmount, balance, ETHER, addTransaction])
 }

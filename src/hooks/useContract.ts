@@ -8,7 +8,7 @@ import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.
 import { useMemo } from 'react'
 import {
   AGGREGATOR_CONTRACT_ADDRESS,
-  GOVERNANCE_ADDRESS,
+    GOVERNANCE_ADDRESS,
   MERKLE_DISTRIBUTOR_ADDRESS,
   UNI,
   MULTI_SENDER
@@ -125,14 +125,9 @@ export function useUniContract(): Contract | null {
   return useContract(chainId ? UNI[chainId].address : undefined, UNI_ABI, true)
 }
 
-
-
 export function useStakingContract(stakingAddress?: string, withSignerIfPossible?: boolean): Contract | null {
   return useContract(stakingAddress, STAKING_REWARDS_ABI, withSignerIfPossible)
 }
-
-
-
 
 
 export function useSocksController(): Contract | null {
@@ -148,7 +143,6 @@ export function useSocksController(): Contract | null {
 export function useAggregatorContract(): Contract | null {
   return useContract(AGGREGATOR_CONTRACT_ADDRESS, AGGREGATOR_ABI, true)
 }
-
 
 export function useWrappedTokenContract(contractAddress: string | undefined): Contract | null {
   return useContract(contractAddress, NUSDC_ABI)

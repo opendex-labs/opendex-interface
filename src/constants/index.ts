@@ -23,6 +23,7 @@ export const FUSDC = new Token(ChainId.FANTOM, '0x04068da6c83afcfa0e13ba15a66966
 export const FNUSD = new Token(ChainId.FANTOM, '0xC5cd01e988cD0794E05ab80F2BCdbDF13cE08BD3', 6, 'NUSD', 'Nova USD')
 export const WSNT = new Token(ChainId.NOVA, '0x657a66332A65B535Da6C5d67b8cD1D410c161a08', 18, 'WSNT', 'Wrapped SNT')
 export const NUSD = new Token(ChainId.NOVA, '0x1F5396f254EE25377A5C1b9c6BfF5f44e9294fFF', 6, 'NUSD', 'Nova USD')
+export const ODX = new Token(ChainId.NOVA, '0xe36118ccfa51e4caf750dfaeaf5c6cf250759acb', 18, 'ODX', 'OpenDEX')
 
 export const WNBX = new Token(
   ChainId.NOVA,

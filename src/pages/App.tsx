@@ -23,6 +23,7 @@ import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
+import Token from './Token'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -84,6 +85,7 @@ export default function App() {
             <Switch>
               <Route exact strict path="/" component={Swap} /> // Home page. Used to define where users will lend first.
               <Route exact strict path="/swap" component={Swap} />
+              <Route exact strict path="/token" component={Token} />
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/find" component={PoolFinder} />
               <Route exact strict path="/pool" component={Pool} />

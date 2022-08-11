@@ -295,6 +295,9 @@ export default function Header() {
           >
             {t('Liquidity')}
           </StyledNavLink>
+          <StyledNavLink id={`swap-nav-link`} to={'/token'}>
+            {t('ODX')}
+          </StyledNavLink>
 
           <Button>
           <StyledExternalLink id={`add-token-nav-link`} href={'https://github.com/nova-network-inc/common-assets/blob/main/token-lists/public/open-dex.json'}>

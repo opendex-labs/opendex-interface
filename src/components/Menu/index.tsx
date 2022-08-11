@@ -1,14 +1,11 @@
 import React, { useRef } from 'react'
-import { BookOpen, Code, Info, PieChart } from 'react-feather'
+import { Code, Info, PieChart } from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
-
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useToggleModal } from '../../state/application/hooks'
-
 import { ExternalLink } from '../../theme'
-
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
@@ -105,10 +102,6 @@ export default function Menu() {
 
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://novascan.io/address/0xAA98E14A634D4A1F6F7D0CA3D30F655795831F78">
-            <BookOpen size={14} />
-            Donate
-          </MenuItem>
           <MenuItem id="link" href="https://docs.google.com/document/d/1hPeVOdAFWbI5_E6qo3jIdXZWm5Dbaln5sdF_9bUsVKw/edit?usp=sharing">
             <Info size={14} />
             Paper
